@@ -7,7 +7,16 @@ import Link from "next/link";
 export default function HeroSection() {
     return (
         <div className="bg-gray-900  grid  md:grid-cols-2">
-            <div
+            <div className="">
+                <GlareCard className="w-80">
+                <Image
+                    src="/img.jpg"
+                    alt="Picture of the devloper"
+                    width={500}
+                    height={500}
+                    />
+                    </GlareCard>
+            </div>
             <div className="border-4 w-full py-8">
 
                     <div className="text-4xl text-white font-bold text-center">
