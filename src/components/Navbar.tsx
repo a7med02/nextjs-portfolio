@@ -3,6 +3,8 @@
 import { useState} from 'react'
 import Link from 'next/link'
 import { HoverBorderGradient } from './ui/hover-border-gradient'
+import { BrainCircuit , Menu} from 'lucide-react';
+
 
 
 const Navbar = () => {
@@ -15,9 +17,9 @@ const Navbar = () => {
         {name: '</Contact>', link: '/contact'}
     ]
   return (
-    <nav className='flex justify-between p-4  m-4 border shadow-lg shadow-indigo-500/50 rounded-2xl bg-gray-950'>
-        <div className='text-2xl text-indigo-500 '>
-            medex
+    <nav className='flex justify-around items-center py-4 mt-4 bg-gray-950 border shadow-lg shadow-indigo-500/50 rounded-2xl '>
+        <div className='text-indigo-500'>
+            <BrainCircuit className=''/>
         </div>
         
         <div className={`${
@@ -25,21 +27,17 @@ const Navbar = () => {
         } justify-center items-center gap-3 sm:gap-5 lg:gap-10 sm:flex-row flex-col mt-2  sm:mt-0`}>
             {navItems.map((item, index) => (
                 <Link key={index} href={item.link}>
-                    {/* <div className="text-lg sm:text-xl font-semibold text-white border-indigo-500 shadow-lg shadow-indigo-500/50 "> */}
-                        {/* <div className='hover:p-1'> */}
                         <HoverBorderGradient
                         containerClassName="rounded-full"
                         as="button"
-                        className="dark:bg-black bg-white text-black dark:text-white hover:text-green-700 hover:mx-2 flex items-center space-x-2">
+                        className="dark:bg-black bg-white text-black dark:text-white hover:bg-indigo-500  flex items-center space-x-2">
                             {item.name}
                             </HoverBorderGradient>
-                        {/* </div> */}
-                    {/* </div> */}
                 </Link>
             ))}     
         </div>
-        <div className='flex items-center text-2xl text-white'>
-            icon
+        <div className='flex items-center text-indigo-500 sm:hidden'>
+            <Menu onClick={() => setToggleMenu(!toggleMenu)} className='cursor-pointer'/>
         </div>
     </nav>
   )
