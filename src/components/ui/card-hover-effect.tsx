@@ -21,12 +21,12 @@ export const HoverEffect = ({
   type ImageKeys = "Minishell" | "IRC" | "PingPong website" | "Philosophers" | "Inception" | "Cub3D";
 
 const srcImage: Record<ImageKeys, string> = {
-  Minishell: "/bg.jpg",
-  IRC: "/bg.jpg",
-  "PingPong website": "/bg.jpg",
-  Philosophers: "/bg.jpg",
-  Inception: "/bg.jpg",
-  Cub3D: "/bg.jpg",
+  Minishell: "/mini.png",
+  IRC: "/irc.png",
+  "PingPong website": "/ping.jpg",
+  Philosophers: "/ph.jpg",
+  Inception: "/inc.jpg",
+  Cub3D: "/cub.jpg",
 };
   return (
     <div

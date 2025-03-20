@@ -12,7 +12,7 @@ const content = [
     content: (
         <GlareCard >
 
-        <Image src="/img.jpg" width={300} height={300} className="h-full w-full object-cover" alt="devloper image" />
+        <Image src="/pr1.jpg" width={300} height={300} className="h-full w-full object-cover" alt="devloper image" />
         </GlareCard>
     ),
   },
@@ -41,7 +41,7 @@ const content = [
       "Right now, I’m developing ft_transcendence, a multiplayer ping-pong web app, where I’m responsible for the landing page, signup, and authentication.",
     content: (
         <GlareCard >
-      <Image src="/img.jpg" width={300} height={300} className="h-full w-full object-cover" alt="devloper image" />
+      <Image src="/pr3.jpg" width={300} height={300} className="h-full w-full object-cover" alt="devloper image" />
         </GlareCard>
     ),
   },

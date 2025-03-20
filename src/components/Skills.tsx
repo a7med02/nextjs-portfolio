@@ -12,7 +12,7 @@ import { motion } from "motion/react";
 
 export default function AnimatedModalDemo() {
   const images = [
-    "/bali1.jpg",
+    "/ping.jpg",
     "/bali2.jpg",
     "/bali3.jpg",
     "/bali4.jpg",
