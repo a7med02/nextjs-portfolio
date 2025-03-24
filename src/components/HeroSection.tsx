@@ -5,6 +5,8 @@ import Image from "next/image";
 import { GlareCard } from "./ui/glare-card";
 import Link from "next/link";
 import { FlipWords } from "./ui/flip-words";
+import { Code, Figma, Globe } from "lucide-react";
+import { u } from "framer-motion/client";
 export default function HeroSection() {
     const words = ["full-stack devloper", "front-end devloper", "back-end devloper", "software engineer student"];
     return (
@@ -20,19 +22,20 @@ export default function HeroSection() {
                     </div>
                     <div className="text-white text-center text-lg flex justify-center mt-20 gap-4 md:gap-20 ">
                         
-                        <button className="border-white border-2 text-2xl font-semibold rounded-3xl py-3 hover:bg-indigo-500">
+                        <button className="border-white border-2 text-2xl font-semibold rounded-3xl p-2 hover:bg-indigo-500">
                             <Link href="/contact">
                                  Contact Me 
                             </Link>
                         </button>
-                        <button className="border-white border-2 text-2xl font-semibold rounded-3xl py-3 hover:bg-indigo-500">
-                            <Link href="/projects">
+                        <button onClick={() =>window.scrollTo({top:document.body.scrollHeight, behavior: 'smooth'})}
+                        className="border-white border-2 text-2xl font-semibold rounded-3xl p-2  hover:bg-indigo-500">
                                 View Projects 
-                            </Link>
+
+                            
                         </button>
                     </div>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center relative">
                 <GlareCard className="">
                 <Image
                     className=""
@@ -42,6 +45,9 @@ export default function HeroSection() {
                     height={600}
                     />
                     </GlareCard>
+                    <div className="absolute top-1/4 left-0 w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center p-2 shadow-2xl">
+                        <Globe size={24} className="text-white"/>
+                    </div>
             </div>
         </div>
     );

@@ -3,13 +3,15 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 // [url(/bg.jpg)] 
 
 export default function Home() {
   return (
-    <main className="bg-black md:px-16 h-full bg-cover bg-no-repeat ">
+    <main className="bg-black md:px-16 h-full bg-cover bg-repeat  ">
       <div>
+      <BackgroundBeamsWithCollision >
         <Navbar />
         <HeroSection />
         <About />
@@ -21,6 +23,7 @@ export default function Home() {
         <Skills />
         <Skills />
         </div>
+      </BackgroundBeamsWithCollision>
       </div>
     </main>
   );
