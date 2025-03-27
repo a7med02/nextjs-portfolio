@@ -20,7 +20,7 @@ export default function Home() {
         <Skills />
         <Skills />
         <Skills />
-        <Skills />
+        <Skills /> 
         <Skills />
         </div>
       </BackgroundBeamsWithCollision>
