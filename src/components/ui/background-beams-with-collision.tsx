@@ -75,14 +75,15 @@ export const BackgroundBeamsWithCollision = ({
         className
       )}
     >
-      {beams.map((beam) => (
-        <CollisionMechanism
-          key={beam.initialX + "beam-idx"}
-          beamOptions={beam}
-          containerRef={containerRef}
-          parentRef={parentRef}
-        />
-      ))}
+      // Option 1: Use type assertion (if you're confident the ref won't be null when used)
+    {beams.map((beam) => (
+      <CollisionMechanism
+        key={beam.initialX + "beam-idx"}
+        beamOptions={beam}
+        containerRef={containerRef as React.RefObject<HTMLDivElement>}
+        parentRef={parentRef as React.RefObject<HTMLDivElement>}
+      />
+    ))}
 
       {children}
       <div
