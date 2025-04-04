@@ -17,7 +17,7 @@ export const HoverEffect = ({
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   type ImageKeys = "Minishell" | "IRC" | "PingPong website" | "Philosophers" | "Inception" | "Cub3D";
 
 const srcImage: Record<ImageKeys, string> = {

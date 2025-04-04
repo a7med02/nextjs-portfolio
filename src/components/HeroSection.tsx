@@ -1,12 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { GlareCard } from "./ui/glare-card";
 import Link from "next/link";
 import { FlipWords } from "./ui/flip-words";
-import { Code, Figma, Globe } from "lucide-react";
-import { u } from "framer-motion/client";
+import {  Globe } from "lucide-react";
 export default function HeroSection() {
     const words = ["full-stack devloper", "front-end devloper", "back-end devloper", "software engineer student"];
     return (
@@ -30,8 +28,6 @@ export default function HeroSection() {
                         <button onClick={() =>window.scrollTo({top:document.body.scrollHeight, behavior: 'smooth'})}
                         className="border-white border-2 text-2xl font-semibold rounded-3xl p-2  hover:bg-indigo-500">
                                 View Projects 
-
-                            
                         </button>
                     </div>
             </div>

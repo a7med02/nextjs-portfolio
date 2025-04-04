@@ -75,7 +75,6 @@ export const BackgroundBeamsWithCollision = ({
         className
       )}
     >
-      // Option 1: Use type assertion (if you're confident the ref won't be null when used)
     {beams.map((beam) => (
       <CollisionMechanism
         key={beam.initialX + "beam-idx"}

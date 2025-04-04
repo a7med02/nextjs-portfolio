@@ -221,7 +221,7 @@ const CloseIcon = () => {
 // Add it in a separate file, I've added here for simplicity
 export const useOutsideClick = (
   ref: React.RefObject<HTMLElement>,
-  callback: Function
+  callback: () => void  // Callback function to be called when a click is detected outside the compon
 ) => {
   useEffect(() => {
     const listener = (event: any) => {

@@ -1,5 +1,4 @@
 
-import { div, image } from "framer-motion/client";
 import { HoverEffect } from "./ui/card-hover-effect";
 
 
