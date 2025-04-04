@@ -78,8 +78,8 @@ export const BackgroundBeamsWithCollision = ({
         <CollisionMechanism
           key={`${beam.initialX}-${beam.translateX}-${beam.duration}`}
           beamOptions={beam}
-          containerRef={containerRef}
-          parentRef={parentRef}
+          containerRef={containerRef as React.RefObject<HTMLDivElement>}
+          parentRef={parentRef as React.RefObject<HTMLDivElement>}
         />
       ))}
 
