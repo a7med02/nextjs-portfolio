@@ -37,7 +37,7 @@ export const GlareCard = ({
     "--radius": "48px",
     "--easing": "ease",
     "--transition": "var(--duration) var(--easing)",
-  } as any;
+  } 
 
   const backgroundStyle = {
     "--step": "5%",
@@ -66,7 +66,7 @@ export const GlareCard = ({
   };
   return (
     <div
-      style={containerStyle}
+      style={containerStyle as React.CSSProperties}
       className="relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]"
       ref={refElement}
       onPointerMove={(event) => {
