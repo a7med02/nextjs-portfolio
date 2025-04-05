@@ -7,8 +7,7 @@ import { FlipWords } from "./ui/flip-words";
 import {  Globe } from "lucide-react";
 export default function HeroSection() {
     const words = ["full-stack devloper", "front-end devloper", "back-end devloper", "software engineer student"];
-    return (
-        <div className="bg-gray-900  grid  md:grid-cols-2">
+    return (<div className="bg-gray-900 m-4 grid md:grid-cols-2 rounded-4xl ">
             
             <div className="border-4 w-full py-8">
 

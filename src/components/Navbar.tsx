@@ -18,14 +18,14 @@ const Navbar = () => {
         {name: '</Contact>', link: '/contact'}
     ]
   return (
-    <nav className='flex justify-around items-center py-4  bg-gray-950 border shadow-lg shadow-indigo-500/50 rounded-2xl '>
+    <nav className='flex justify-around items-center py-4 mb-4  bg-gray-950 border shadow-lg shadow-indigo-500/50 rounded-2xl '>
         <div className='text-indigo-500'>
             <BrainCircuit className=''/>
         </div>
         
         <div className={`${
             toggleMenu ? "flex" : "hidden sm:flex"
-        } justify-center items-center gap-3 sm:gap-5 lg:gap-10 sm:flex-row flex-col mt-2  sm:mt-0`}>
+        } justify-center items-center gap-3 sm:gap-5 lg:gap-10 sm:flex-row flex-col mt-4 sm:mt-0`}>
             {navItems.map((item, index) => (
                 <Link key={index} href={item.link}>
                         <HoverBorderGradient

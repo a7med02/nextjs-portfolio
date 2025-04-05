@@ -5,7 +5,7 @@ import { HoverEffect } from "./ui/card-hover-effect";
 export default function CardHoverEffectDemo() {
   return (
     <div className="w-full h-full flex flex-col justify-around">
-    <h2 className="text-5xl font-bold self-center text-indigo-500">My <b className="dark:text-white"> Projects </b> </h2>
+    <h2 className="text-5xl font-bold self-center text-indigo-500 my-4">My <b className="text-white"> Projects </b> </h2>
         <div className=" py-14 bg-indigo-950 border-4">
           <HoverEffect items={projects} />
         </div>

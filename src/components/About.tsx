@@ -60,7 +60,7 @@ const content = [
 export function StickyScrollRevealDemo() {
   return (
     <div className="w-full h-screen py-4 flex flex-col justify-around">
-        <h2 className="text-5xl font-bold self-center text-indigo-500">About <b className="text-white"> Me </b> </h2>
+        <h2 className="text-5xl font-bold mb-6 self-center text-indigo-500">About <b className="text-white"> Me </b> </h2>
       <StickyScroll content={content} />
     </div>
   );
