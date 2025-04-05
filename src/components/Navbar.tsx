@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { HoverBorderGradient } from './ui/hover-border-gradient'
 import { BrainCircuit , Menu} from 'lucide-react';
 
+import ThemeToggle from './ThemeToggle';
 
 
 const Navbar = () => {
@@ -36,6 +37,7 @@ const Navbar = () => {
                 </Link>
             ))}     
         </div>
+        <ThemeToggle />
         <div className='flex items-center text-indigo-500 sm:hidden'>
             <Menu onClick={() => setToggleMenu(!toggleMenu)} className='cursor-pointer'/>
         </div>

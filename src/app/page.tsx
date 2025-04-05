@@ -9,21 +9,17 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 
 export default function Home() {
   return (
-    <main className="bg-black md:px-16 h-full bg-cover bg-repeat  ">
-      <div>
-      <BackgroundBeamsWithCollision >
+    <main className=" bg-black md:px-16 h-full bg-cover bg-repeat ">
         <Navbar />
+      <div className="flex flex-col justify-center items-center " >
         <HeroSection />
         <About />
         <Projects />
-        <div className="flex justify-center gap-7">
-        <Skills />
-        <Skills />
+        {/* <div className=""> */}
         <Skills />
         <Skills /> 
-        <Skills />
-        </div>
-      </BackgroundBeamsWithCollision>
+        <Skills /> 
+        {/* </div> */}
       </div>
     </main>
   );
