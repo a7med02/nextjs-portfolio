@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 // [url(/bg.jpg)] 
 

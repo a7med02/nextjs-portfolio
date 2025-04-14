@@ -1,11 +1,21 @@
-// components/ThemeProvider.jsx
+// src/components/ThemeProvider.tsx
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const ThemeContext = createContext({
+// Define the type for the context
+type ThemeContextType = {
+  theme: string;
+  toggleTheme: () => void;
+};
+
+// Use a no-op function instead of an empty function
+const noop = () => { /* no operation */ };
+
+// Create the context with the proper type
+const ThemeContext = createContext<ThemeContextType>({
   theme: 'light',
-  toggleTheme: () => {},
+  toggleTheme: noop, // Using noop instead of an empty arrow function
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
