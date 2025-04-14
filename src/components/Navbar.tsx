@@ -2,10 +2,7 @@
 import { useState, useEffect } from 'react'
 import { BrainCircuit, Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
-
-interface SectionRefs {
-  [key: string]: React.RefObject<HTMLElement>
-}
+import { SectionRefs } from '@/types' // Import from types file
 
 const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
     const [toggleMenu, setToggleMenu] = useState(false)
