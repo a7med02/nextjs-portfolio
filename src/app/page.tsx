@@ -25,7 +25,7 @@ export default function Home() {
   
   return (
     <main className="bg-black md:px-16 h-full bg-cover bg-repeat">
-      <Navbar sectionRefs={sectionRefs} />
+      <Navbar  />
       
     
       <div className="flex flex-col justify-center items-center pt-16">
