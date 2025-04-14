@@ -8,7 +8,7 @@ const content = [
   {
     title: "👋 Who am I",
     description:
-      "I'm Ahmed Bourghiba, a Software Engineering student with a passion for full-stack web development. I love building web applications that are scalable and efficient.",
+      "I'm Ahmed Bouregba, a Software Engineering student with a passion for full-stack web development. I love building web applications that are scalable and efficient.",
     content: (
         <GlareCard >
 
@@ -17,9 +17,9 @@ const content = [
     ),
   },
   {
-    title: "💻 What technologies am  work with",
+    title: "📚 What's your background?",
     description:
-      "I specialize in Django, React.js, TailwindCSS, PostgreSQL, and Docker. I also enjoy working with WebSockets and authentication systems like JWT & OAuth (42 API).",
+      "I’m currently studying at 1337 School, where I’ve developed strong foundations in software engineering, problem solving, and teamwork. My learning journey includes both low-level systems (like C++) and high-level web technologies.",
     content: (
       <div className="flex h-full w-full items-center justify-center text-white">
         <GlareCard >
@@ -36,9 +36,9 @@ const content = [
     ),
   },
   {
-    title: "🎯 What am currently working on?",
+    title: "🛠️ What technologies do you use?",
     description:
-      "Right now, I’m developing ft_transcendence, a multiplayer ping-pong web app, where I’m responsible for the landing page, signup, and authentication.",
+      "On the frontend, I work with React, Next.js, TailwindCSS, and TypeScript. For the backend, I use Django, Node.js, and PostgreSQL, with Docker for containerization and WebSockets for real-time features",
     content: (
         <GlareCard >
       <Image src="/pr3.jpg" width={300} height={300} className="h-full w-full object-cover" alt="devloper image" />
@@ -46,9 +46,14 @@ const content = [
     ),
   },
   {
-    title: "🚀 What am looking for?",
+    title: "🚀 What have you built?",
     description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    "What have you built?\n" +
+    "I’ve built projects like:\n\n" +
+    "- Real-time chat apps using WebSockets\n" +
+    "- Full authentication systems with JWT\n" +
+    "- Dockerized full-stack apps with Nginx and HTTPS\n" +
+    "- Custom UI/UX pages with responsive design",
     content: (
         <GlareCard >
 
