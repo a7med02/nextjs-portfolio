@@ -6,7 +6,9 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
 import { SectionRefs } from '@/types' // Import from types file
+
 
 export default function Home() {
   const homeRef = useRef<HTMLElement>(null)
@@ -25,7 +27,7 @@ export default function Home() {
   
   return (
     <main className="bg-black md:px-16 h-full bg-cover bg-repeat">
-      <Navbar  />
+      <Navbar sectionRefs={sectionRefs} />
       
     
       <div className="flex flex-col justify-center items-center pt-16">
@@ -58,8 +60,7 @@ export default function Home() {
           ref={skillsRef}
           className="w-full min-h-screen py-20"
         >
-          <Skills />
-          <Skills />
+          <h2 className="text-5xl font-bold text-center mb-40 self-center text-indigo-500 my-4">My <b className="text-white"> Skills </b> </h2>
           <Skills />
         </section>
         
@@ -68,7 +69,7 @@ export default function Home() {
           ref={contactRef}
           className="w-full min-h-screen py-20"
         >
-          {/* Add your Contact component here */}
+          <Contact />
         </section>
       </div>
     </main>

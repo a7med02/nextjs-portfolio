@@ -1,30 +1,25 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
-import { HoverBorderGradient } from './ui/hover-border-gradient'
+import { useState, useEffect } from 'react'
 import { BrainCircuit, Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
+import { SectionRefs, SectionId } from '@/types'
 
-const Navbar = () => {
+interface NavbarProps {
+  sectionRefs: SectionRefs
+}
+
+const Navbar = ({ sectionRefs }: NavbarProps) => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
-  const sectionsRef = useRef<HTMLElement[]>([])
+  const [activeSection, setActiveSection] = useState<SectionId>('home')
 
   const navItems = [
-    { name: 'Home', id: 'home' },
-    { name: 'About', id: 'about' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Contact', id: 'contact' }
+    { name: 'Home', id: 'home' as const },
+    { name: 'About', id: 'about' as const },
+    { name: 'Projects', id: 'projects' as const },
+    { name: 'Skills', id: 'skills' as const },
+    { name: 'Contact', id: 'contact' as const }
   ]
-
-  // Register section refs
-  const registerSection = (element: HTMLElement | null, id: string) => {
-    if (element) {
-      sectionsRef.current.push(element)
-    }
-  }
 
   // Handle scroll behavior and active section detection
   useEffect(() => {
@@ -33,14 +28,16 @@ const Navbar = () => {
       
       const scrollPosition = window.scrollY + 100
       
-      for (const section of sectionsRef.current) {
-        if (!section) continue
+      const sectionIds: SectionId[] = ['home', 'about', 'projects', 'skills', 'contact']
+      for (const id of sectionIds) {
+        const ref = sectionRefs[id]
+        if (!ref.current) continue
         
-        const sectionTop = section.offsetTop
-        const sectionHeight = section.offsetHeight
+        const sectionTop = ref.current.offsetTop
+        const sectionHeight = ref.current.offsetHeight
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(section.id)
+          setActiveSection(id)
           break
         }
       }
@@ -48,11 +45,11 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [sectionRefs])
 
   // Smooth scroll to section
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id)
+  const scrollToSection = (id: SectionId) => {
+    const section = sectionRefs[id]?.current
     if (section) {
       window.scrollTo({
         top: section.offsetTop - 80,
@@ -62,7 +59,6 @@ const Navbar = () => {
       setToggleMenu(false)
     }
   }
-
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
