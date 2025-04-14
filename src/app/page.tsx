@@ -15,8 +15,6 @@ export default function Home() {
   const skillsRef = useRef<HTMLElement>(null)
   const contactRef = useRef<HTMLElement>(null)
   
-  // Add a type assertion here since we know the refs will be 
-  // properly used with non-null values in the component
   const sectionRefs = {
     home: homeRef,
     about: aboutRef,

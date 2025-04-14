@@ -2,20 +2,20 @@
 import { useState, useEffect } from 'react'
 import { BrainCircuit, Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
-import { SectionRefs } from '@/types' // Import from types file
+import { SectionRefs, SectionId } from '@/types' // Import both types
 
 const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
-    const [activeSection, setActiveSection] = useState('home')
+    const [activeSection, setActiveSection] = useState<SectionId>('home')
 
     const navItems = [
-        { name: 'Home', id: 'home' },
-        { name: 'About', id: 'about' },
-        { name: 'Projects', id: 'projects' },
-        { name: 'Skills', id: 'skills' },
-        { name: 'Contact', id: 'contact' }
-    ]
+        { name: 'Home', id: 'home' as const },
+        { name: 'About', id: 'about' as const },
+        { name: 'Projects', id: 'projects' as const },
+        { name: 'Skills', id: 'skills' as const },
+        { name: 'Contact', id: 'contact' as const }
+    ] satisfies { name: string; id: SectionId }[]
 
     // Handle scroll behavior and active section detection
     useEffect(() => {
@@ -24,7 +24,10 @@ const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
             
             const scrollPosition = window.scrollY + 100
             
-            for (const [id, ref] of Object.entries(sectionRefs)) {
+            // Type-safe iteration through sections
+            const sectionIds: SectionId[] = ['home', 'about', 'projects', 'skills', 'contact'];
+            for (const id of sectionIds) {
+                const ref = sectionRefs[id]
                 if (!ref.current) continue
                 
                 const sectionTop = ref.current.offsetTop
@@ -42,7 +45,7 @@ const Navbar = ({ sectionRefs }: { sectionRefs: SectionRefs }) => {
     }, [sectionRefs])
 
     // Smooth scroll to section
-    const scrollToSection = (id: string) => {
+    const scrollToSection = (id: SectionId) => {
         const section = sectionRefs[id]?.current
         if (section) {
             window.scrollTo({
